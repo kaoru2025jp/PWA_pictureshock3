@@ -1,0 +1,220 @@
+<html>
+
+<head>
+<title>SOS</title>
+
+<style>
+
+/* 全体 */
+
+body{
+font-family: Calibri, Arial;
+background:#f5f6f7;
+padding:30px;
+}
+
+/* 画像スライダー */
+
+#slider{
+width:420px;
+height:220px;
+margin-bottom:25px;
+border:2px solid #c0c0c0;
+box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+
+#slider img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* Excel風テーブル */
+
+.excelTable{
+
+border-collapse:collapse;
+background:white;
+box-shadow:0 3px 8px rgba(0,0,0,0.15);
+
+}
+
+/* ヘッダー */
+
+.excelTable th{
+
+background:#217346;
+color:white;
+padding:10px 14px;
+border:1px solid #c6c6c6;
+font-weight:bold;
+
+}
+
+/* セル */
+
+.excelTable td{
+
+border:1px solid #d9d9d9;
+padding:10px 14px;
+text-align:center;
+
+}
+
+/* 行番号 */
+
+.rowIndex{
+
+background:#f3f3f3;
+font-weight:bold;
+
+}
+
+/* 偶数行 */
+
+.excelTable tr:nth-child(even) td{
+
+background:#fafafa;
+
+}
+
+/* ホバー */
+
+.excelTable tr:hover td{
+
+background:#e8f4ea;
+
+}
+
+/* ボタン */
+
+button{
+
+background:#217346;
+color:white;
+border:none;
+padding:10px 18px;
+font-size:16px;
+cursor:pointer;
+border-radius:4px;
+margin-bottom:20px;
+
+}
+
+button:hover{
+
+background:#1b5e37;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- 画像ローテーション -->
+
+<div id="slider">
+<img id="slideImg" src="image1.jpg">
+</div>
+
+<button onclick="myFunc()">STOCK</button>
+
+<div id="table"></div>
+
+<script>
+
+/* 画像ローテーション */
+
+var images=[
+"image1.jpg",
+"image2.jpg",
+"image3.jpg"
+];
+
+var index=0;
+
+function rotateImage(){
+
+index++;
+
+if(index>=images.length){
+index=0;
+}
+
+document.getElementById("slideImg").src=images[index];
+
+}
+
+setInterval(rotateImage,3000);
+
+
+/* プロンプト */
+
+function myFunc(){
+
+var B=Number(prompt("B"));
+var O1=Number(prompt("O1"));
+var O2=Number(prompt("O2"));
+var T=Number(prompt("T"));
+
+var S1=B-O1*T;
+var S2=B-O2*T;
+
+alert(S1);
+alert(S2);
+
+var S=B-O1-O2;
+
+showTable(B,O1,O2,S);
+
+}
+
+/* 表 */
+
+function showTable(B,O1,O2,S){
+
+var table="<table class='excelTable'>";
+
+table+="<tr>";
+table+="<th></th>";
+table+="<th>項目</th>";
+table+="<th>値</th>";
+table+="</tr>";
+
+table+="<tr>";
+table+="<td class='rowIndex'>1</td>";
+table+="<td>B</td>";
+table+="<td>"+B+"</td>";
+table+="</tr>";
+
+table+="<tr>";
+table+="<td class='rowIndex'>2</td>";
+table+="<td>O1</td>";
+table+="<td>"+O1+"</td>";
+table+="</tr>";
+
+table+="<tr>";
+table+="<td class='rowIndex'>3</td>";
+table+="<td>O2</td>";
+table+="<td>"+O2+"</td>";
+table+="</tr>";
+
+table+="<tr>";
+table+="<td class='rowIndex'>4</td>";
+table+="<td>S = B - O1 - O2</td>";
+table+="<td>"+S+"</td>";
+table+="</tr>";
+
+table+="</table>";
+
+document.getElementById("table").innerHTML=table;
+
+}
+
+</script>
+
+</body>
+
+</html>
