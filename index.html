@@ -1,6 +1,9 @@
+<!DOCTYPE html>
 <html>
 
 <head>
+<meta charset="UTF-8">
+
 <title>SOS</title>
 
 <style>
@@ -8,12 +11,15 @@
 /* 全体 */
 
 body{
-font-family: Calibri, Arial;
+font-family:Calibri,Arial;
 background:#f5f6f7;
 padding:30px;
+max-width:900px;
+margin:auto;
+line-height:1.7;
 }
 
-/* 画像スライダー */
+/* 画像 */
 
 #slider{
 width:420px;
@@ -26,70 +32,39 @@ box-shadow:0 2px 6px rgba(0,0,0,0.2);
 #slider img{
 width:100%;
 height:100%;
-object-fit:cover;
+object-fit:contain;
+background:black;
 }
 
 /* Excel風テーブル */
 
 .excelTable{
-
 border-collapse:collapse;
 background:white;
 box-shadow:0 3px 8px rgba(0,0,0,0.15);
-
 }
 
-/* ヘッダー */
-
 .excelTable th{
-
 background:#217346;
 color:white;
 padding:10px 14px;
 border:1px solid #c6c6c6;
-font-weight:bold;
-
 }
 
-/* セル */
-
 .excelTable td{
-
 border:1px solid #d9d9d9;
 padding:10px 14px;
 text-align:center;
-
 }
-
-/* 行番号 */
 
 .rowIndex{
-
 background:#f3f3f3;
 font-weight:bold;
-
-}
-
-/* 偶数行 */
-
-.excelTable tr:nth-child(even) td{
-
-background:#fafafa;
-
-}
-
-/* ホバー */
-
-.excelTable tr:hover td{
-
-background:#e8f4ea;
-
 }
 
 /* ボタン */
 
 button{
-
 background:#217346;
 color:white;
 border:none;
@@ -98,13 +73,25 @@ font-size:16px;
 cursor:pointer;
 border-radius:4px;
 margin-bottom:20px;
-
 }
 
-button:hover{
+/* 記事 */
 
-background:#1b5e37;
+article{
+margin-top:40px;
+background:white;
+padding:25px;
+box-shadow:0 3px 8px rgba(0,0,0,0.15);
+}
 
+h1{
+border-bottom:3px solid #217346;
+padding-bottom:5px;
+}
+
+h2{
+margin-top:25px;
+color:#217346;
 }
 
 </style>
@@ -113,19 +100,136 @@ background:#1b5e37;
 
 <body>
 
-<!-- 画像ローテーション -->
+<h1>Whale – Plankton Economic Model</h1>
+
+<!-- 画像 -->
 
 <div id="slider">
-<img id="slideImg" src="image1.jpg">
+<img id="slideImg" src="photo1.png">
 </div>
 
 <button onclick="myFunc()">STOCK</button>
 
 <div id="table"></div>
 
+<!-- 経済モデル文章 -->
+
+<article>
+
+<h1>クジラとプランクトンの生態系モデルから考える経済の流動性</h1>
+
+<p>
+自然界の生態系には、経済学を理解するための興味深いアナロジーが存在する。
+その一例が、クジラとプランクトンの関係である。
+</p>
+
+<p>
+プランクトンは海洋生態系の基盤となる資源であり、
+クジラの生存率はこの資源の状態に大きく依存している。
+この関係は、経済学における市場構造や流動性の問題と
+類似した構造を持っている。
+</p>
+
+<h2>1 生態系モデル</h2>
+
+<p>① プランクトンが豊富な状態ではクジラの生存率は高く、生態系は安定している。</p>
+
+<p>② プランクトンが減少するとクジラの生存率は低下する。</p>
+
+<p>③ クジラは移動することで新しい資源を探し、生態系を回復させる。</p>
+
+<p>
+このように、生態系の安定には資源の存在だけでなく
+<strong>移動＝流動性</strong>が重要となる。
+</p>
+
+<h2>2 経済学への対応</h2>
+
+<ul>
+
+<li>プランクトン豊富 → 独占価格</li>
+
+<li>プランクトン減少 → 競争価格</li>
+
+<li>クジラの移動 → 市場流動性</li>
+
+</ul>
+
+<p>
+もし移動が停止すれば、市場では
+<strong>流動性の罠（Liquidity Trap）</strong>
+に近い状態が発生する可能性がある。
+</p>
+
+<h2>3 経済が維持される条件</h2>
+
+<ul>
+
+<li>独占価格の維持</li>
+
+<li>自由競争の維持</li>
+
+<li>流動性の確保</li>
+
+</ul>
+
+<p>
+市場の流動性が確保されていれば、
+企業の生存率は長期的に維持される可能性が高くなる。
+</p>
+
+<h2>4 モデルのパラメータ</h2>
+
+<p>
+
+K₁ : 独占価格パラメータ<br>
+K₂ : 競争価格パラメータ<br>
+B : 基礎資源<br>
+O₁ / O₂ : 消費圧力<br>
+T : 時間
+
+</p>
+
+<h2>5 国債とオプション</h2>
+
+<p>
+国債市場には資源配分を調整する
+<strong>オプション</strong>
+の役割が存在する。
+</p>
+
+<p>
+
+① オプションが十分機能している状態<br>
+② オプション機能が弱まった状態
+
+</p>
+
+<p>
+市場参加者が常に新しい場へ移動できる環境があれば、
+流動性は維持される可能性が高くなる。
+</p>
+
+<h2>6 結論</h2>
+
+<p>
+クジラとプランクトンの生態系モデルは、
+経済システムを理解するための有効な比喩となる。
+</p>
+
+<p>
+経済の安定には
+<strong>
+独占価格・競争・流動性
+</strong>
+の三要素が必要である。
+</p>
+
+</article>
+
 <script>
 
-/* 画像ローテーション */
+/* 画像 */
 
 var images=[
 "photo1.png",
@@ -150,7 +254,7 @@ document.getElementById("slideImg").src=images[index];
 setInterval(rotateImage,3000);
 
 
-/* プロンプト */
+/* 計算 */
 
 function myFunc(){
 
@@ -171,41 +275,19 @@ showTable(B,O1,O2,S);
 
 }
 
-/* 表 */
-
 function showTable(B,O1,O2,S){
 
 var table="<table class='excelTable'>";
 
-table+="<tr>";
-table+="<th></th>";
-table+="<th>項目</th>";
-table+="<th>値</th>";
-table+="</tr>";
+table+="<tr><th></th><th>項目</th><th>値</th></tr>";
 
-table+="<tr>";
-table+="<td class='rowIndex'>1</td>";
-table+="<td>B</td>";
-table+="<td>"+B+"</td>";
-table+="</tr>";
+table+="<tr><td class='rowIndex'>1</td><td>B</td><td>"+B+"</td></tr>";
 
-table+="<tr>";
-table+="<td class='rowIndex'>2</td>";
-table+="<td>O1</td>";
-table+="<td>"+O1+"</td>";
-table+="</tr>";
+table+="<tr><td class='rowIndex'>2</td><td>O1</td><td>"+O1+"</td></tr>";
 
-table+="<tr>";
-table+="<td class='rowIndex'>3</td>";
-table+="<td>O2</td>";
-table+="<td>"+O2+"</td>";
-table+="</tr>";
+table+="<tr><td class='rowIndex'>3</td><td>O2</td><td>"+O2+"</td></tr>";
 
-table+="<tr>";
-table+="<td class='rowIndex'>4</td>";
-table+="<td>S = B - O1 - O2</td>";
-table+="<td>"+S+"</td>";
-table+="</tr>";
+table+="<tr><td class='rowIndex'>4</td><td>S=B-O1-O2</td><td>"+S+"</td></tr>";
 
 table+="</table>";
 
@@ -218,3 +300,4 @@ document.getElementById("table").innerHTML=table;
 </body>
 
 </html>
+
